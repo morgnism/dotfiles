@@ -35,7 +35,7 @@ cd ~
 echo "Installing Homebrew packages..."
 
 brew tap homebrew/bundle
-brew bundle
+brew bundle $HOME/dotfiles/Brewfile
 
 # Generate SSH key
 echo "Generate SSH keys..."
