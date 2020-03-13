@@ -105,9 +105,9 @@ for homebrew_cask_package in "${homebrew_cask_packages[@]}"; do
   brew cask install "$homebrew_cask_package"
 done
 
-mas 'Byword', id: 420212497
-mas 'Things', id: 904280696
-mas '1Password' id:443987910
+mas install 'Byword', id: 420212497
+mas install 'Things', id: 904280696
+mas install '1Password' id:443987910
 
 # Generate SSH key
 echo "Generate SSH keys..."
