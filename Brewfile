@@ -26,6 +26,7 @@ brew 'node'
 brew 'yarn'
 
 # Apps
+cask 'iterm2'
 cask 'alfred'
 cask 'caffeine'
 cask 'discord'
