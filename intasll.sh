@@ -36,6 +36,13 @@ echo "Installing Homebrew packages..."
 brew tap homebrew/bundle
 brew bundle
 
+# Generate SSH key
+echo "Generate SSH keys..."
+ssh-keygen -t rsa
+
+echo "Copied SSH key to clipboard - You can now add it to Github"
+pbcopy < ~/.ssh/id_ed25519.pub
+
 # Register global Git configs
 git config --add include.path ~/.dotfiles/.git_aliases
 git config --global core.excludesfile ~/.dotfiles/.gitignore_global
