@@ -71,8 +71,8 @@ brew tap homebrew/bundle
 
 homebrew_cask_packages=(
 # Apps
-'iterm2'
 'alfred'
+'android-studio'
 'caffeine'
 'discord'
 'docker'
@@ -81,13 +81,14 @@ homebrew_cask_packages=(
 'google-backup-and-sync'
 'google-chrome'
 'insomnia'
+'iterm2'
+'rocket'
 'slack'
 'sublime-text'
+'spotify'
 'there'
 'the-unarchiver'
-'android-studio'
-'rocket'
-'spotify'
+'typora'
 'zoomus'
 
 # Fonts
@@ -105,7 +106,6 @@ for homebrew_cask_package in "${homebrew_cask_packages[@]}"; do
   brew cask install "$homebrew_cask_package"
 done
 
-mas install 420212497 # Byword
 mas install 904280696 # Things
 mas install 443987910 # 1Password
 
