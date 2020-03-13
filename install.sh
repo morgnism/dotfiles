@@ -9,11 +9,12 @@ if test ! $(which zsh); then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
-# Copy Default Oh My Zsh configs
+# Remove old files and symlink Oh My Zsh configs
 rm -rf $HOME/.zshrc
 ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
-# Copy Mackup config
+# Remove old files and symlink Mackup config
+rm -rf $HOME/.mackup.cfg
 ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
 
 # Homebrew - Install
