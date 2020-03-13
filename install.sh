@@ -106,7 +106,7 @@ for homebrew_cask_package in "${homebrew_cask_packages[@]}"; do
   brew cask install "$homebrew_cask_package"
 done
 
-mas install 904280696 # Things
+# Install Mac App Store apps
 mas install 443987910 # 1Password
 
 # Generate SSH key
