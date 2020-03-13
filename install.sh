@@ -1,21 +1,19 @@
 #!/bin/bash
-set -euo pipefail
+# Uncomment to enable exit on errors
+# set -euo pipefail
 
 echo "Settings up you Mac..."
 sudo -v
 
 # Oh My Zsh Install
-if test ! $(which zsh); then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-fi
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Remove old files and symlink Oh My Zsh configs
 rm -rf $HOME/.zshrc
-ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
+ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
 
 # Remove old files and symlink Mackup config
-rm -rf $HOME/.mackup.cfg
-ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
+ln -s $HOME/dotfiles/.mackup.cfg $HOME/.mackup.cfg
 
 # Homebrew - Install
 echo "Installing Homebrew..."
@@ -120,7 +118,7 @@ echo "Copied SSH key to clipboard - You can now add it to Github"
 pbcopy < ~/.ssh/id_rsa.pub
 
 # Register global Git configs
-git config --global --add include.path ~/.dotfiles/.git_aliases
+cp .git_aliases $HOME/.gitconfig
 git config --global core.excludesfile ~/.dotfiles/.gitignore_global
 
 echo "Installaton Complete!"
