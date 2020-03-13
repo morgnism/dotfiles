@@ -75,7 +75,6 @@ homebrew_cask_packages=(
 # Apps
 'alfred'
 'android-studio'
-'caffeine'
 'discord'
 'docker'
 'firefox'
@@ -91,6 +90,7 @@ homebrew_cask_packages=(
 'there'
 'the-unarchiver'
 'typora'
+'visual-studio-code'
 'zoomus'
 
 # Fonts
@@ -108,18 +108,19 @@ for homebrew_cask_package in "${homebrew_cask_packages[@]}"; do
   brew cask install "$homebrew_cask_package"
 done
 
-# Install Mac App Store apps
-mas install 443987910 # 1Password
-
 # Generate SSH key
-echo "Generate SSH keys..."
-ssh-keygen -t rsa
+SSH_KEY=$HOME/.ssh/id_rsa.pub
+
+if test ! -f "$SSH_KEY"; then
+    echo "Generate SSH keys..."
+    ssh-keygen -t rsa
+fi
 
 echo "Copied SSH key to clipboard - You can now add it to Github"
-pbcopy < ~/.ssh/id_ed25519.pub
+pbcopy < ~/.ssh/id_rsa.pub
 
 # Register global Git configs
-git config --add include.path ~/.dotfiles/.git_aliases
+git config --global --add include.path ~/.dotfiles/.git_aliases
 git config --global core.excludesfile ~/.dotfiles/.gitignore_global
 
 echo "Installaton Complete!"
