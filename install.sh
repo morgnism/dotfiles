@@ -34,8 +34,80 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 cd ~
 echo "Installing Homebrew packages..."
 
+homebrew_packages=(
+# Binaries
+'git'
+'bash' # Latest Bash version
+'bat' # "cat" on steroids
+'coreutils' # Those that come with macOS are outdated
+'grep' # Plain-text data regexp search
+'httpie' # CLI HTTP commands
+'mackup' # Backup configs
+'mas' # Mac App Store manager
+'trash' # Manage the Trash bin
+'tree' # List directories in a tree structure
+'zlib' # Needed for Memcached
+
+# Development
+'node'
+'yarn'
+
+# Zsh Plugins
+'zsh-syntax-highlighting'
+'zsh-autosuggestions'
+)
+
+for homebrew_package in "${homebrew_packages[@]}"; do
+ brew install "$homebrew_package"
+done
+
+# Install Casks
+echo "Installing Homebrew cask packages..."
+
+brew tap homebrew/cask
+brew tap homebrew/cask-fonts
+brew tap homebrew/cask-versions
 brew tap homebrew/bundle
-brew bundle $HOME/dotfiles/Brewfile
+
+homebrew_cask_packages=(
+# Apps
+'iterm2'
+'alfred'
+'caffeine'
+'discord'
+'docker'
+'firefox'
+'github'
+'google-backup-and-sync'
+'google-chrome'
+'insomnia'
+'slack'
+'sublime-text'
+'there'
+'the-unarchiver'
+'android-studio'
+'rocket'
+'spotify'
+'zoomus'
+
+# Fonts
+'font-lato'
+'font-open-sans'
+'font-roboto'
+'font-roboto-condensed'
+'font-source-code-pro-for-powerline'
+'font-source-code-pro'
+'font-source-sans-pro'
+'font-source-serif-pro'
+)
+
+for homebrew_cask_package in "${homebrew_cask_packages[@]}"; do
+  brew cask install "$homebrew_cask_package"
+done
+
+mas 'Byword', id: 420212497
+mas 'Things', id: 904280696
+mas '1Password' id:443987910
 
 # Generate SSH key
 echo "Generate SSH keys..."
