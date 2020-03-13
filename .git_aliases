@@ -1,0 +1,95 @@
+[alias]
+	a = add --all
+	#############
+	b = branch
+	ba = branch -a
+	bd = branch -d
+	bD = branch -D
+	bav = branch -a -v
+	#############
+	c = commit
+	ca = commit -a
+	cm = commit -m
+	cam = commit -am
+	#############
+	d = diff
+	#############
+	f = fetch
+	fo = fetch origin
+	fu = fetch upstream
+	#############
+	m = merge
+	md = merge develop
+	ma = merge --abort
+	mc = merge --continue
+	ms = merge --skip
+	#############
+	o = checkout
+	ob = checkout -b
+	#############
+	ps = push
+	psf = push -f
+	psu = push -u
+	pso = push origin
+	psao = push --all origin
+	psfo = push -f origin
+	psuo = push -u origin
+	psom = push origin master
+	psfom = push -f origin master
+	pstom = push --tags origin master
+	psuom = push -u origin master
+	#############
+	pl = pull
+	plu = pull -u
+	plo = pull origin
+	plp = pull upstream
+	plom = pull origin master
+	plod = pull origin develop
+	plpm = pull upstream master
+	plpm = pull upstream develop
+	#############
+	pb = pull --rebase
+	pbo = pull --rebase origin
+	pbp = pull --rebase upstream
+	pbom = pull --rebase origin master
+	pbpm = pull --rebase upstream master
+	#############
+	rb = rebase
+	rba = rebase --abort
+	rbc = rebase --continue
+	rbi = rebase --interactive
+	rbs = rebase --skip
+	#############
+	r = remote
+	ra = remote add
+	rr = remote rm
+	rv = remote -v
+	rm = remote rename
+	rp = remote prune
+	rs = remote show
+	rao = remote add origin
+	rau = remote add upstream
+	rso = remote show origin
+	rsu = remote show upstream
+	rpo = remote prune origin
+	rpu = remote prune upstream
+	#############
+	rsh = reset --hard
+	#############
+	s = status
+	sb = status -s -b
+	#############
+	sa = stash apply
+	sai= "!f() { git stash apply stash@{$1}; }; f"
+	sc = stash clear
+	sd = stash drop
+	sl = stash list
+	sp = stash pop
+	ss = stash save
+	sw = stash show
+	su = "!f() { git stash; git stash -u; git stash pop stash@{1}; }; f"
+	sba = "!f() { git subtree add --prefix $1 $2 master --squash; }; f"
+	sbu = "!f() { git subtree pull --prefix $1 $2 master --squash; }; f"
+	#############
+	td = tag -d
+	tl = tag -l
