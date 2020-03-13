@@ -10,7 +10,6 @@ if test ! $(which zsh); then
 fi
 
 # Copy Default Oh My Zsh configs
-rm -rf $HOME/.zshrc
 ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
 # Copy Mackup config
