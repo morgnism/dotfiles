@@ -84,6 +84,7 @@ homebrew_cask_packages=(
 'rocket'
 'slack'
 'sublime-text'
+'spectacle'
 'spotify'
 'there'
 'the-unarchiver'
