@@ -101,6 +101,7 @@ homebrew_cask_packages=(
 'font-source-code-pro'
 'font-source-sans-pro'
 'font-source-serif-pro'
+'font-fira-code'
 )
 
 for homebrew_cask_package in "${homebrew_cask_packages[@]}"; do
