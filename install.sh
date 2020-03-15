@@ -81,6 +81,7 @@ homebrew_cask_packages=(
 'google-chrome'
 'insomnia'
 'iterm2'
+'macs-fan-control'
 'rocket'
 'slack'
 'sublime-text'
