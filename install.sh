@@ -83,6 +83,7 @@ homebrew_cask_packages=(
 'insomnia'
 'iterm2'
 'macs-fan-control'
+'postman',
 'rocket'
 'slack'
 'sublime-text'
