@@ -111,6 +111,9 @@ for homebrew_cask_package in "${homebrew_cask_packages[@]}"; do
   brew cask install "$homebrew_cask_package"
 done
 
+# Remove any older version from the cellar
+brew cleanup
+
 # Generate SSH key
 SSH_KEY=$HOME/.ssh/id_rsa.pub
 
