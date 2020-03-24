@@ -44,6 +44,7 @@ homebrew_packages=(
 'httpie' # CLI HTTP commands
 'mackup' # Backup configs
 'mas' # Mac App Store manager
+'mysql'
 'trash' # Manage the Trash bin
 'tree' # List directories in a tree structure
 'zlib' # Needed for Memcached
@@ -121,7 +122,6 @@ echo "Copied SSH key to clipboard - You can now add it to Github"
 pbcopy < ~/.ssh/id_rsa.pub
 
 # Register global Git configs
-cp .git_aliases $HOME/.gitconfig
 git config --global core.excludesfile ~/.dotfiles/.gitignore_global
 
 echo "Installaton Complete!"
