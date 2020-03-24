@@ -114,6 +114,17 @@ done
 # Remove any older version from the cellar
 brew cleanup
 
+# Set default MySQL root password and auth type.
+echo "Setting up MySQL..."
+
+mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
+
+echo "Setting default user root@localhost"
+echo "user: root"
+echo "url: localhost"
+echo "password: password"
+
+
 # Generate SSH key
 SSH_KEY=$HOME/.ssh/id_rsa.pub
 
