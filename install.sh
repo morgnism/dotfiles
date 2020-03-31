@@ -83,7 +83,7 @@ homebrew_cask_packages=(
 'insomnia'
 'iterm2'
 'macs-fan-control'
-'postman',
+'postman ✔',
 'rocket'
 'slack'
 'sublime-text'
@@ -117,9 +117,11 @@ brew cleanup
 # Set default MySQL root password and auth type.
 echo "Setting up MySQL..."
 
-mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
+if test ! -f "$(which mysql)"; then
+    mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
+fi
 
-echo "Setting default user root@localhost"
+echo "MySQL default user root@localhost set..."
 echo "user: root"
 echo "url: localhost"
 echo "password: password"
