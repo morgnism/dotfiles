@@ -2,7 +2,10 @@
 
 This repository contains packages for setup and maintenance of a developer environment across Mac computers. While this is my preferred setup, which includes some base packages needed for a development, any packages can be removed or added to to fit any need.
 
-__Supports Intel and M1 Macs!__
+__Dotfiles supports Intel and M1 Macs!__
+
+If you're new to using dotfiles and have a fresh Mac, continue on.
+If you're migrating from a Time Machine backup, [jump to here](#migration-from-a-time-machine-backup)
 
 ## What Am I Installing?
 
@@ -21,35 +24,6 @@ _Note: not all packages are needed and can be modified in the `Brewfile`. To add
 # A Fresh macOS Setup
 
 These instructions are for when you've already set up your dotfiles. If you want to get started with your own dotfiles you can [find instructions below](#extended-and-modified-from).
-
-## Intel vs M1 Macs
-If you're like me and have a Time Machine backup from an Intel Mac, you can still perform a migration on an M1 Mac, but Homebrew will be installed in the wrong location.
-
-### Verify Old Homebrew Install
-Intel Macs should have Homebrew installed at this location:
-```bash
-$ which brew # /usr/local/Homebrew
-```
-
-### Fix the old install
-Fixing the old install is quite simple with the following steps:
-- Uninstall Homebrew
-- Remove any leftover files `Cask`, `Cellar`, and `Frameworks` under `/usr/local/`
-- Reinstall Homebrew
-
-Removing the old files won't be an issue because Homebrew installs metadata for packages it installs at those locations and won't affect already installed packages. You will notice several failures for packages already installed.
-
-### Verify New Homebrew Install
-M1 Macs should have Homebrew installed at this new location:
-```bash
-$ which brew # /opt/homebrew
-```
-
-References:
-- [Uninstall Homebrew](https://ralphjsmit.com/uninstall-homebrew/)
-- [Install Homebrew](https://mac.install.guide/ruby/3.html)
-- [Housekeeping for Homebrew on M1 Macs](https://mac.install.guide/homebrew/8.html)
-
 ## Pre-install Requirements
 
 First, go through the checklist below to make sure you didn't forget anything before you wipe your hard drive.
@@ -82,6 +56,38 @@ Follow these steps to setup a new Mac:
 Your Mac is now ready to use!
 
 > Note: you can use a different location than `~/.dotfiles` if you want. Just make sure you also update the reference in the [`.zshrc`](./.zshrc) file.
+
+# Migration from a Time Machine Backup
+
+These instructions are for when you want to migrate from an older backup. This assumes that you have a pre-existing Homebrew install or development setup with some existing apps and packages.
+
+## Intel vs M1 Macs
+If you're like me and have a Time Machine backup from an Intel Mac, you can still perform a migration on an M1 Mac, but Homebrew will be installed in the wrong location.
+
+### Verify Old Homebrew Install
+Intel Macs should have Homebrew installed at this location:
+```bash
+$ which brew # /usr/local/Homebrew
+```
+
+### Fix the old install
+Fixing the old install is quite simple with the following steps:
+- Uninstall Homebrew
+- Remove any leftover files `Cask`, `Cellar`, and `Frameworks` under `/usr/local/`
+- Reinstall Homebrew
+
+Removing the old files won't be an issue because Homebrew installs metadata for packages it installs at those locations and won't affect already installed packages. You will notice several failures for packages already installed.
+
+### Verify New Homebrew Install
+M1 Macs should have Homebrew installed at this new location:
+```bash
+$ which brew # /opt/homebrew
+```
+
+References:
+- [Uninstall Homebrew](https://ralphjsmit.com/uninstall-homebrew/)
+- [Install Homebrew](https://mac.install.guide/ruby/3.html)
+- [Housekeeping for Homebrew on M1 Macs](https://mac.install.guide/homebrew/8.html)
 
 ## Extended and Modified from
 
