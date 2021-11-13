@@ -93,3 +93,5 @@
 	#############
 	td = tag -d
 	tl = tag -l
+[core]
+	excludesfile = /Users/morganism/.dotfiles/.gitignore_global
