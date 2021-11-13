@@ -23,7 +23,6 @@ brew 'zlib' # Needed for Memcached
 # Development
 brew 'mysql'
 # brew 'nginx'
-brew 'node'
 # brew 'redis'
 brew 'yarn'
 
@@ -43,9 +42,9 @@ cask 'gitkraken'
 cask 'google-chrome'
 cask 'google-drive'
 cask 'gpg-suite' # Email and messaging encryption
+cask 'hyper' # Javascript-based terminal
 cask 'imageoptim' # Optimize images for the web
 cask 'insomnia' # API dedsign platform
-cask 'iterm2'
 # cask 'pastebot' # Clipboard history for easily accessing everything copied (trial)
 cask 'postman'
 # cask 'ray' # Dump debugging (like mistake.io, quokka, browser console)

@@ -3,7 +3,7 @@
 echo "Settings up you Mac..."
 
 # Check for Oh My Zsh and install
-if test ! ~/.oh-my-zsh; then
+if test ! $( which '~/.oh-my-zsh'); then
     /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
@@ -17,10 +17,8 @@ ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
 
 
 # Homebrew - Install
-if test ! -f $(which brew); then
-    echo "Installing Homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-fi
+echo "Installing Homebrew..."
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # Install/Update NVM
 echo "Installing/Updating nvm..."
